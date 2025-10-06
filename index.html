@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered KJV Bible Study | John 3:16 & Identity in Christ</title>
+    <meta name="description" content="Learn how to use Google Gemini AI for deep, meaningful KJV Bible study focusing on John 3:16 and discovering your identity in Christ.">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Crimson Text', 'serif'],
+                    },
+                    colors: {
+                        'bible-blue': '#1e3a8a',
+                        'bible-gold': '#d97706',
+                        'ai-purple': '#7c3aed',
+                        'study-green': '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-book-open text-bible-blue text-2xl"></i>
+                    <h1 class="text-2xl font-bold text-bible-blue">AI Bible Study</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">About</a>
+                    <a href="#john316" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">John 3:16</a>
+                    <a href="#identity" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">Identity</a>
+                    <a href="#guide" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">AI Guide</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-3 mt-4">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">About</a>
+                    <a href="#john316" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">John 3:16</a>
+                    <a href="#identity" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">Identity</a>
+                    <a href="#guide" class="nav-link text-gray-700 hover:text-bible-blue transition-colors">AI Guide</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-bible-blue mb-6 leading-tight">
+                    Unlock <span class="text-ai-purple">AI-Powered</span><br>
+                    Bible Study
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                    Discover the profound depths of John 3:16 and your identity in Christ using Google Gemini AI for transformative biblical insight.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button onclick="scrollToSection('guide')" class="bg-bible-blue hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-rocket mr-2"></i>Start Learning
+                    </button>
+                    <button onclick="scrollToSection('john316')" class="bg-white hover:bg-gray-50 text-bible-blue border-2 border-bible-blue px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-cross mr-2"></i>Explore John 3:16
+                    </button>
+                </div>
+                
+                <!-- Key Features -->
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                        <div class="text-ai-purple text-4xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">AI-Enhanced Study</h3>
+                        <p class="text-gray-600">Leverage Google Gemini's advanced AI to uncover deeper meanings and connections in Scripture.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                        <div class="text-bible-gold text-4xl mb-4">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Deep Analysis</h3>
+                        <p class="text-gray-600">Explore historical context, original language insights, and theological implications.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                        <div class="text-study-green text-4xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Identity in Christ</h3>
+                        <p class="text-gray-600">Discover who you are in Christ through careful study and AI-guided reflection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-bible-blue mb-8">Transform Your Bible Study</h2>
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    Combining the timeless wisdom of the King James Version Bible with cutting-edge AI technology, 
+                    this guide helps you dive deeper into Scripture than ever before.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Why AI-Powered Bible Study?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-study-green text-xl mt-1"></i>
+                                <p class="text-gray-700"><strong>Enhanced Understanding:</strong> AI helps identify patterns, themes, and connections across Scripture.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-study-green text-xl mt-1"></i>
+                                <p class="text-gray-700"><strong>Historical Context:</strong> Get insights into cultural and historical backgrounds.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-study-green text-xl mt-1"></i>
+                                <p class="text-gray-700"><strong>Personal Application:</strong> Discover how ancient truths apply to modern life.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-study-green text-xl mt-1"></i>
+                                <p class="text-gray-700"><strong>Deeper Reflection:</strong> AI-guided questions for meaningful contemplation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-bible-blue to-ai-purple p-8 rounded-2xl text-white">
+                        <i class="fas fa-quote-left text-3xl mb-4 opacity-70"></i>
+                        <p class="text-lg font-serif italic mb-4">
+                            "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+                        </p>
+                        <p class="text-sm opacity-90">— John 3:16 (KJV)</p>
+                        <div class="mt-6 p-4 bg-white/20 rounded-lg">
+                            <p class="text-sm">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                This verse contains layers of meaning that AI can help us explore systematically.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- John 3:16 Study Section -->
+    <section id="john316" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-bible-blue mb-6">John 3:16 Deep Dive</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Explore the most beloved verse in Christianity with AI-powered insights and analysis.
+                    </p>
+                </div>
+
+                <!-- Verse Display -->
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-12 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <p class="text-2xl md:text-4xl font-serif text-bible-blue leading-relaxed mb-6">
+                            "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+                        </p>
+                        <p class="text-bible-gold font-semibold text-lg">John 3:16 (King James Version)</p>
+                    </div>
+                </div>
+
+                <!-- Analysis Sections -->
+                <div class="space-y-8">
+                    <!-- Key Themes -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-key text-bible-gold mr-3"></i>
+                            Key Themes to Explore with AI
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="study-theme" data-theme="love">
+                                <h4 class="font-semibold text-lg text-bible-blue mb-2">
+                                    <i class="fas fa-heart mr-2"></i>God's Love
+                                </h4>
+                                <p class="text-gray-600 mb-3">The nature and extent of divine love for humanity.</p>
+                                <button class="text-ai-purple hover:text-purple-800 text-sm font-medium">
+                                    Explore with AI <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                            <div class="study-theme" data-theme="sacrifice">
+                                <h4 class="font-semibold text-lg text-bible-blue mb-2">
+                                    <i class="fas fa-cross mr-2"></i>Divine Sacrifice
+                                </h4>
+                                <p class="text-gray-600 mb-3">The significance of God giving His only Son.</p>
+                                <button class="text-ai-purple hover:text-purple-800 text-sm font-medium">
+                                    Explore with AI <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                            <div class="study-theme" data-theme="belief">
+                                <h4 class="font-semibold text-lg text-bible-blue mb-2">
+                                    <i class="fas fa-pray mr-2"></i>Faith & Belief
+                                </h4>
+                                <p class="text-gray-600 mb-3">What it means to believe and have faith.</p>
+                                <button class="text-ai-purple hover:text-purple-800 text-sm font-medium">
+                                    Explore with AI <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                            <div class="study-theme" data-theme="eternal">
+                                <h4 class="font-semibold text-lg text-bible-blue mb-2">
+                                    <i class="fas fa-infinity mr-2"></i>Eternal Life
+                                </h4>
+                                <p class="text-gray-600 mb-3">The promise and nature of everlasting life.</p>
+                                <button class="text-ai-purple hover:text-purple-800 text-sm font-medium">
+                                    Explore with AI <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Analysis Panel -->
+                    <div id="ai-analysis-panel" class="bg-gradient-to-r from-ai-purple to-indigo-600 text-white p-8 rounded-2xl shadow-lg hidden">
+                        <h4 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-robot mr-3"></i>
+                            AI Analysis: <span id="current-theme"></span>
+                        </h4>
+                        <div id="ai-content" class="space-y-4">
+                            <!-- AI analysis content will be loaded here -->
+                        </div>
+                        <button id="close-analysis" class="mt-6 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors">
+                            Close Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identity in Christ Section -->
+    <section id="identity" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-bible-blue mb-6">Your Identity in Christ</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Discover who you are through the lens of John 3:16 and other supporting Scriptures.
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Identity Truths -->
+                    <div class="bg-gradient-to-br from-study-green to-emerald-600 text-white p-8 md:p-12 rounded-3xl shadow-xl">
+                        <h3 class="text-3xl font-bold mb-8 text-center">Who You Are in Christ</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-crown mr-3"></i>Beloved by God
+                                    </h4>
+                                    <p class="opacity-90">"For God so loved the world..." - You are deeply, unconditionally loved by the Creator.</p>
+                                </div>
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-shield-alt mr-3"></i>Saved by Grace
+                                    </h4>
+                                    <p class="opacity-90">"...that whosoever believeth..." - Your salvation is a gift, not earned by works.</p>
+                                </div>
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-key mr-3"></i>Chosen and Called
+                                    </h4>
+                                    <p class="opacity-90">You are specifically chosen to receive eternal life through belief.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-infinity mr-3"></i>Eternal Destiny
+                                    </h4>
+                                    <p class="opacity-90">"...have everlasting life" - Your future is secure in God's hands.</p>
+                                </div>
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-hands mr-3"></i>Child of God
+                                    </h4>
+                                    <p class="opacity-90">Through belief, you become a child of the Most High God.</p>
+                                </div>
+                                <div class="identity-truth">
+                                    <h4 class="text-xl font-semibold mb-2 flex items-center">
+                                        <i class="fas fa-star mr-3"></i>New Creation
+                                    </h4>
+                                    <p class="opacity-90">In Christ, you are made new - old things pass away.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supporting Verses -->
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Supporting Scriptures</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <p class="font-serif text-bible-blue text-lg italic mb-3">
+                                    "But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name."
+                                </p>
+                                <p class="text-sm text-gray-600">— John 1:12 (KJV)</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <p class="font-serif text-bible-blue text-lg italic mb-3">
+                                    "Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new."
+                                </p>
+                                <p class="text-sm text-gray-600">— 2 Corinthians 5:17 (KJV)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Identity Reflection Exercise -->
+                    <div class="bg-bible-blue text-white p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-mirror mr-3"></i>
+                            Identity Reflection Exercise
+                        </h3>
+                        <p class="mb-6 opacity-90">Use these AI prompts to deepen your understanding of your identity in Christ:</p>
+                        <div class="bg-white/10 p-6 rounded-xl">
+                            <h4 class="font-semibold mb-3">Try This AI Prompt:</h4>
+                            <p class="font-mono text-sm bg-white/20 p-4 rounded-lg mb-4">
+                                "Based on John 3:16 and related scriptures, help me understand what it means to be beloved by God. How does this truth change how I see myself and my worth?"
+                            </p>
+                            <button onclick="copyPrompt(this)" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-colors">
+                                <i class="fas fa-copy mr-2"></i>Copy Prompt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Guide Section -->
+    <section id="guide" class="py-20 bg-gradient-to-br from-slate-100 to-blue-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-bible-blue mb-6">AI Bible Study Guide</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Step-by-step instructions for using Google Gemini AI to enhance your biblical studies.
+                    </p>
+                </div>
+
+                <!-- Step-by-Step Guide -->
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="step-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-start space-x-6">
+                            <div class="bg-bible-blue text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                1
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Access Google Gemini</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Go to <a href="https://gemini.google.com" target="_blank" class="text-bible-blue hover:underline font-semibold">gemini.google.com</a> and sign in with your Google account. 
+                                    Gemini AI is free to use and perfect for biblical analysis.
+                                </p>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="text-sm text-blue-800">
+                                        <i class="fas fa-info-circle mr-2"></i>
+                                        <strong>Tip:</strong> Bookmark Gemini for easy access during your daily Bible study time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-start space-x-6">
+                            <div class="bg-bible-gold text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                2
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Prepare Your Study</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Before engaging AI, spend time reading the passage in context. For John 3:16, read John 3:1-21 
+                                    to understand the conversation with Nicodemus.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-yellow-800 mb-2">Pre-Study Checklist:</h4>
+                                        <ul class="text-sm text-yellow-700 space-y-1">
+                                            <li>✓ Read the passage multiple times</li>
+                                            <li>✓ Note initial questions or observations</li>
+                                            <li>✓ Pray for understanding</li>
+                                            <li>✓ Have your Bible and notebook ready</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Context Questions:</h4>
+                                        <ul class="text-sm text-green-700 space-y-1">
+                                            <li>• Who is speaking?</li>
+                                            <li>• What's the historical setting?</li>
+                                            <li>• Who is the audience?</li>
+                                            <li>• What comes before/after?</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-start space-x-6">
+                            <div class="bg-ai-purple text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                3
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Craft Effective Prompts</h3>
+                                <p class="text-gray-600 mb-6">
+                                    The key to meaningful AI Bible study is asking the right questions. Here are proven prompt templates:
+                                </p>
+                                
+                                <!-- Prompt Templates -->
+                                <div class="space-y-4">
+                                    <div class="prompt-template bg-purple-50 border-l-4 border-ai-purple p-4 rounded-r-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">Historical Context Analysis</h4>
+                                        <p class="font-mono text-sm bg-white p-3 rounded mb-2">
+                                            "Please analyze John 3:16 in its historical and cultural context. What would this verse have meant to Nicodemus as a Jewish leader? How does understanding first-century Jewish beliefs about the Messiah inform this passage?"
+                                        </p>
+                                        <button onclick="copyPrompt(this)" class="text-purple-600 hover:text-purple-800 text-sm">
+                                            <i class="fas fa-copy mr-1"></i>Copy Template
+                                        </button>
+                                    </div>
+
+                                    <div class="prompt-template bg-blue-50 border-l-4 border-bible-blue p-4 rounded-r-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">Word Study & Language</h4>
+                                        <p class="font-mono text-sm bg-white p-3 rounded mb-2">
+                                            "In John 3:16 KJV, examine the key words: 'loved' (agapao), 'world' (kosmos), 'believeth' (pisteuo), and 'everlasting' (aionios). What are the original Greek meanings and how do they deepen our understanding?"
+                                        </p>
+                                        <button onclick="copyPrompt(this)" class="text-blue-600 hover:text-blue-800 text-sm">
+                                            <i class="fas fa-copy mr-1"></i>Copy Template
+                                        </button>
+                                    </div>
+
+                                    <div class="prompt-template bg-green-50 border-l-4 border-study-green p-4 rounded-r-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">Personal Application</h4>
+                                        <p class="font-mono text-sm bg-white p-3 rounded mb-2">
+                                            "Based on John 3:16, help me understand what it means that God 'so loved the world' - including me personally. How should this truth impact my daily life, relationships, and sense of identity?"
+                                        </p>
+                                        <button onclick="copyPrompt(this)" class="text-green-600 hover:text-green-800 text-sm">
+                                            <i class="fas fa-copy mr-1"></i>Copy Template
+                                        </button>
+                                    </div>
+
+                                    <div class="prompt-template bg-yellow-50 border-l-4 border-bible-gold p-4 rounded-r-lg">
+                                        <h4 class="font-semibold text-yellow-800 mb-2">Cross-Reference Study</h4>
+                                        <p class="font-mono text-sm bg-white p-3 rounded mb-2">
+                                            "Connect John 3:16 with other key passages about God's love and salvation: Romans 5:8, Ephesians 2:4-5, 1 John 4:9-10. What themes emerge across these texts?"
+                                        </p>
+                                        <button onclick="copyPrompt(this)" class="text-yellow-600 hover:text-yellow-800 text-sm">
+                                            <i class="fas fa-copy mr-1"></i>Copy Template
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-start space-x-6">
+                            <div class="bg-study-green text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                4
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Engage in Deep Discussion</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Don't settle for one-and-done prompts. Engage AI in ongoing conversation to explore deeper layers of meaning.
+                                </p>
+                                
+                                <div class="bg-green-50 p-6 rounded-xl">
+                                    <h4 class="font-semibold text-green-800 mb-4">Sample AI Conversation Flow:</h4>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-semibold">YOU</span>
+                                            <p class="text-gray-700">"Explain the significance of 'only begotten Son' in John 3:16."</p>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs font-semibold">AI</span>
+                                            <p class="text-gray-700 italic">[AI provides detailed explanation about monogenes...]</p>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-semibold">YOU</span>
+                                            <p class="text-gray-700">"How does this uniqueness of Jesus affect my relationship with God?"</p>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs font-semibold">AI</span>
+                                            <p class="text-gray-700 italic">[AI explains personal implications...]</p>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-semibold">YOU</span>
+                                            <p class="text-gray-700">"Show me other passages that support this truth."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex items-start space-x-6">
+                            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                5
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Verify & Apply</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Always verify AI insights with trusted biblical resources and focus on practical application.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-indigo-800 mb-3">
+                                            <i class="fas fa-check-circle mr-2"></i>Verification Steps
+                                        </h4>
+                                        <ul class="text-sm text-indigo-700 space-y-2">
+                                            <li>• Cross-check with study Bibles</li>
+                                            <li>• Compare multiple translations</li>
+                                            <li>• Consult biblical commentaries</li>
+                                            <li>• Discuss with mature believers</li>
+                                            <li>• Test against core Christian doctrine</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-3">
+                                            <i class="fas fa-lightbulb mr-2"></i>Application Questions
+                                        </h4>
+                                        <ul class="text-sm text-orange-700 space-y-2">
+                                            <li>• How does this truth change me?</li>
+                                            <li>• What should I do differently?</li>
+                                            <li>• How can I share this insight?</li>
+                                            <li>• What does God want me to learn?</li>
+                                            <li>• How does this affect my prayers?</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Start Box -->
+                <div class="mt-16 bg-gradient-to-r from-bible-blue to-ai-purple text-white p-8 rounded-2xl shadow-xl text-center">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Start?</h3>
+                    <p class="text-xl mb-6 opacity-90">
+                        Try this beginner-friendly prompt with John 3:16 right now!
+                    </p>
+                    <div class="bg-white/20 p-6 rounded-xl text-left max-w-2xl mx-auto">
+                        <p class="font-mono text-sm mb-4">
+                            "I'm studying John 3:16 from the King James Bible. Please help me understand what 'For God so loved the world' means. What does this tell us about God's character and His feelings toward humanity, including me personally?"
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <button onclick="copyPrompt(this)" class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-copy mr-2"></i>Copy Prompt
+                            </button>
+                            <a href="https://gemini.google.com" target="_blank" class="bg-white text-bible-blue hover:bg-gray-100 px-6 py-2 rounded-lg transition-colors font-semibold">
+                                <i class="fas fa-external-link-alt mr-2"></i>Open Gemini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <i class="fas fa-book-open text-bible-gold text-3xl"></i>
+                    <h3 class="text-2xl font-bold">AI Bible Study</h3>
+                </div>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Combining the timeless wisdom of Scripture with modern AI technology for deeper understanding and spiritual growth.
+                </p>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500 text-sm">
+                        © 2024 AI Bible Study Guide. Built with love for deeper biblical understanding.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
