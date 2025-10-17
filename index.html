@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Prompt Engineering: Gemini AI & Biblical Insight</title>
+    <title>John 3:16 Study Guide - The Gospel in a Nutshell</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #0f0f23;
-            --bg-secondary: #1a1a2e;
-            --bg-card: #16213e;
-            --accent: #6c5ce7;
-            --accent-light: #a29bfe;
-            --text-primary: #e6e6fa;
-            --text-secondary: #b8b8d1;
-            --highlight: #ff6b6b;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --bg-card: #192030;
+            --text-primary: #e1e8ed;
+            --text-secondary: #8899a6;
+            --accent-gold: #d4af37;
+            --accent-blue: #4a9eff;
+            --accent-red: #e74c3c;
+            --gradient: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
         }
 
         * {
@@ -26,583 +26,531 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-primary);
+            background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            background: var(--bg-secondary);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        header {
             background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-light);
-        }
-
-        /* Main Content */
-        main {
-            margin-top: 80px;
-            padding: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Hero Section */
-        .hero {
+            padding: 2rem 0;
             text-align: center;
-            padding: 4rem 0;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: fadeIn 1s ease-in;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--bg-card);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .card h2 {
-            color: var(--accent-light);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        /* Infographic Section */
-        .infographic-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .infographic-item {
-            background: var(--bg-card);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s;
             position: relative;
             overflow: hidden;
         }
 
-        .infographic-item::before {
+        header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/bible/1200/300.jpg') center/cover;
+            opacity: 0.1;
+            z-index: -1;
         }
 
-        .infographic-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .infographic-icon {
-            font-size: 3rem;
-            color: var(--accent);
+        h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .verse-display {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .verse-display::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+        }
+
+        .verse-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .verse-reference {
+            text-align: right;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .infographic {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 15px;
         }
 
         .infographic-title {
-            font-size: 1.2rem;
-            color: var(--accent-light);
-            margin-bottom: 0.5rem;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
         }
 
-        .infographic-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Session Outline */
-        .session-outline {
-            margin: 3rem 0;
-        }
-
-        .session-parts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .verse-breakdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .session-part {
+        .verse-part {
             background: var(--bg-card);
             border-radius: 10px;
             padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s;
         }
 
-        .session-part::after {
+        .verse-part::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s;
+            height: 4px;
+            background: var(--accent-gold);
         }
 
-        .session-part:hover::after {
-            transform: scaleX(1);
-        }
-
-        .session-part:hover {
+        .verse-part:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .part-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            border-radius: 50%;
-            color: white;
-            font-weight: bold;
-            line-height: 40px;
-            text-align: center;
+        .verse-part h3 {
+            color: var(--accent-blue);
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
-        .part-title {
-            color: var(--accent-light);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .part-goal {
+        .verse-part p {
             color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .part-principles {
-            background: rgba(108, 92, 231, 0.1);
-            border-left: 3px solid var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 0 5px 5px 0;
             font-size: 0.9rem;
         }
 
-        /* Prompt Box */
-        .prompt-box {
-            background: var(--bg-secondary);
-            border: 1px solid var(--accent);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
+        .verse-part i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
         }
 
-        .prompt-box::before {
-            content: '';
+        .context-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .context-section h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .context-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .context-image {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .context-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .context-text {
+            flex: 2;
+        }
+
+        .context-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .context-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .context-text li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .context-text li::before {
+            content: '•';
             position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        .cross-references {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .cross-references h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .reference-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .reference-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .reference-card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .reference-card p {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .reference-card .explanation {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .reflection-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .reflection-section h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .reflection-questions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .question-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+
+        .question-card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .question-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .prayer-button {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .prayer-button:hover {
+            background: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            z-index: -1;
-        }
-
-        .prompt-label {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--accent);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .prompt-content {
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            color: var(--text-primary);
-            line-height: 1.8;
-        }
-
-        /* Copy Button */
-        .copy-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: background 0.3s;
-            display: inline-flex;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
             align-items: center;
-            gap: 0.5rem;
         }
 
-        .copy-btn:hover {
-            background: var(--accent-light);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .session-parts {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Flow Diagram */
-        .flow-diagram {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 3rem 0;
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .flow-step {
+        .modal-content {
             background: var(--bg-card);
+            padding: 2rem;
             border-radius: 10px;
-            padding: 1.5rem;
-            width: 200px;
-            text-align: center;
+            max-width: 600px;
+            width: 90%;
             position: relative;
-            z-index: 2;
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .flow-step:hover {
-            transform: scale(1.05);
-        }
-
-        .flow-line {
+        .close-modal {
             position: absolute;
-            top: 50%;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background: var(--gradient);
-            z-index: 1;
-        }
-
-        .flow-step-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .flow-step-title {
-            color: var(--accent-light);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .flow-step-desc {
+            top: 1rem;
+            right: 1rem;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
-        /* Footer */
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+
+        .prayer-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
         footer {
             background: var(--bg-secondary);
             padding: 2rem 0;
             text-align: center;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
             color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            margin-top: 3rem;
         }
 
-        .social-links a:hover {
-            color: var(--accent-light);
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .verse-text {
+                font-size: 1.2rem;
+            }
+            
+            .context-content {
+                flex-direction: column;
+            }
+            
+            .reference-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Prompt Master</div>
-            <ul class="nav-links">
-                <li><a href="#why-effective">Why It's Effective</a></li>
-                <li><a href="#master-prompt">The Master Prompt</a></li>
-                <li><a href="#session-outline">Session Outline</a></li>
-                <li><a href="#flow-diagram">Process Flow</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1><i class="fas fa-book-open"></i> John 3:16 Study Guide</h1>
+            <p class="subtitle">The Gospel in a Nutshell</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Master Prompt Engineering</h1>
-            <p>Unlock the full potential of Google Gemini AI while exploring the profound depths of John 3:16 through advanced prompt engineering techniques</p>
+    <main class="container">
+        <section class="verse-display">
+            <p class="verse-text">"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</p>
+            <p class="verse-reference">John 3:16, KJV</p>
         </section>
 
-        <section id="why-effective" class="card fade-in">
-            <h2>Why This Prompt is Effective</h2>
-            <div class="infographic-container">
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-user-tie"></i></div>
-                    <div class="infographic-title">Persona Pattern</div>
-                    <div class="infographic-desc">Assigns dual-expert role to focus AI's knowledge base and response style</div>
+        <section class="infographic">
+            <h2 class="infographic-title">Breaking Down the Verse</h2>
+            <div class="verse-breakdown">
+                <div class="verse-part">
+                    <i class="fas fa-heart"></i>
+                    <h3>"For God so loved the world..."</h3>
+                    <p>God's love is intense, active, and sacrificial. It extends to all of humanity, regardless of status or background.</p>
                 </div>
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-sitemap"></i></div>
-                    <div class="infographic-title">Structured Output</div>
-                    <div class="infographic-desc">Commands AI to generate structured series of prompts within a learning framework</div>
+                <div class="verse-part">
+                    <i class="fas fa-gift"></i>
+                    <h3>"...that he gave his only begotten Son..."</h3>
+                    <p>The ultimate demonstration of God's love - giving His unique Son, Jesus, who shares a special eternal relationship with the Father.</p>
                 </div>
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-book"></i></div>
-                    <div class="infographic-title">Case Study Method</div>
-                    <div class="infographic-desc">Merges both goals by using biblical exploration as a live case study</div>
+                <div class="verse-part">
+                    <i class="fas fa-users"></i>
+                    <h3>"...that whosoever believeth in him..."</h3>
+                    <p>The invitation is universal - open to everyone. Belief means deep trust and personal commitment to Jesus, not just intellectual agreement.</p>
                 </div>
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="infographic-title">Progressive Scaffolding</div>
-                    <div class="infographic-desc">Moves from simple to complex prompts for effective teaching</div>
-                </div>
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-brain"></i></div>
-                    <div class="infographic-title">Metacognition</div>
-                    <div class="infographic-desc">Teaches the framework for creating your own prompts</div>
-                </div>
-                <div class="infographic-item">
-                    <div class="infographic-icon"><i class="fas fa-cogs"></i></div>
-                    <div class="infographic-title">Clear Constraints</div>
-                    <div class="infographic-desc">Explicitly defines objectives, methodology, tone, and interactive flow</div>
+                <div class="verse-part">
+                    <i class="fas fa-infinity"></i>
+                    <h3>"...should not perish, but have everlasting life."</h3>
+                    <p>The choice is between eternal separation from God or a life in right relationship with Him - beginning now and continuing forever.</p>
                 </div>
             </div>
         </section>
 
-        <section id="master-prompt" class="card fade-in">
-            <h2>The Master Prompt to Use with Gemini</h2>
-            <p>Copy and paste the entire text below into a new Gemini chat:</p>
-            <div class="prompt-box">
-                <div class="prompt-label">MASTER PROMPT</div>
-                <div class="prompt-content">Role: You are to act as an expert AI Prompt Engineering Coach and a Theological Scholar specializing in Biblical Exegesis of the KJV. Your mission is to deliver a structured, interactive educational session in four parts.
-
-Primary Objective: To teach me, the user, how to use Google Gemini effectively for deep and insightful inquiry.
-
-Secondary Objective (Our Case Study): To guide me through a profound exploration of John 3:16 (KJV), focusing on its deep theological implications and what it reveals about a believer's identity in Christ.
-
-Methodology:
-You will guide me by generating a series of prompts, organized into four distinct parts. For each prompt you provide, you will first explain the prompt engineering principle behind its design and why it is effective. Then, you will provide the prompt itself for me to use. We will use my exploration of John 3:16 as the live subject matter for this training.
-
-Please proceed sequentially, waiting for my response after each part before moving to the next.
-
-Begin with Part 1 now.</div>
+        <section class="context-section">
+            <h2><i class="fas fa-history"></i> Understanding the Context</h2>
+            <div class="context-content">
+                <div class="context-image">
+                    <img src="https://picsum.photos/seed/nicodemus/400/300.jpg" alt="Nicodemus meeting Jesus">
+                </div>
+                <div class="context-text">
+                    <p>John 3:16 is part of a conversation between Jesus and Nicodemus, a prominent Jewish religious leader who came to Jesus by night.</p>
+                    <ul>
+                        <li>Nicodemus was a "ruler of the Jews" - a member of the Sanhedrin</li>
+                        <li>His nighttime visit suggests both genuine curiosity and fear of his peers</li>
+                        <li>Jesus was explaining the necessity of being "born again" to see God's kingdom</li>
+                        <li>John 3:16 explains how this spiritual rebirth is possible through God's love and gift</li>
+                    </ul>
+                </div>
             </div>
-            <button class="copy-btn" onclick="copyPrompt()">
-                <i class="fas fa-copy"></i> Copy Prompt
+        </section>
+
+        <section class="cross-references">
+            <h2><i class="fas fa-link"></i> Cross-References</h2>
+            <div class="reference-grid">
+                <div class="reference-card">
+                    <h3>Romans 5:8</h3>
+                    <p>"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."</p>
+                    <p class="explanation">Reinforces the sacrificial nature of God's love for the undeserving.</p>
+                </div>
+                <div class="reference-card">
+                    <h3>John 1:12</h3>
+                    <p>"But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:"</p>
+                    <p class="explanation">Explains what it means to be a child of God through belief.</p>
+                </div>
+                <div class="reference-card">
+                    <h3>1 John 4:9-10</h3>
+                    <p>"In this was manifested the love of God toward us, because that God sent his only begotten Son into the world, that we might live through him."</p>
+                    <p class="explanation">Further elaborates on the demonstration of God's love.</p>
+                </div>
+                <div class="reference-card">
+                    <h3>John 3:17-18</h3>
+                    <p>"For God sent not his Son into the world to condemn the world; but that the world through him might be saved."</p>
+                    <p class="explanation">Clarifies the purpose of Jesus' coming immediately following John 3:16.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section">
+            <h2><i class="fas fa-pray"></i> Reflect and Pray</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Consider these questions as you reflect on the meaning of John 3:16 in your life:</p>
+            <div class="reflection-questions">
+                <div class="question-card">
+                    <h3>God's Love</h3>
+                    <p>What does it mean to you that God loves "the world" in this way?</p>
+                </div>
+                <div class="question-card">
+                    <h3>The Gift</h3>
+                    <p>How does the gift of Jesus Christ demonstrate the depth of God's love?</p>
+                </div>
+                <div class="question-card">
+                    <h3>Belief</h3>
+                    <p>What does it truly mean for you to "believe" in Jesus?</p>
+                </div>
+                <div class="question-card">
+                    <h3>Eternal Life</h3>
+                    <p>What is the difference between "perishing" and having "everlasting life"?</p>
+                </div>
+            </div>
+            <button class="prayer-button" onclick="openPrayerModal()">
+                <i class="fas fa-hands-praying"></i> Begin Your Prayer
             </button>
-        </section>
-
-        <section id="session-outline" class="session-outline fade-in">
-            <h2>Session Outline</h2>
-            <div class="session-parts">
-                <div class="session-part">
-                    <div class="part-number">1</div>
-                    <div class="part-title">Foundational Prompts</div>
-                    <div class="part-goal">Establishing the Base Context</div>
-                    <div class="part-principles">
-                        <strong>Principles:</strong> Open-ended queries, direct information retrieval, contextual analysis
-                    </div>
-                </div>
-                <div class="session-part">
-                    <div class="part-number">2</div>
-                    <div class="part-title">Analytical Prompts</div>
-                    <div class="part-goal">Deconstructing the Text</div>
-                    <div class="part-principles">
-                        <strong>Principles:</strong> Keyword analysis, comparative analysis, Chain of Thought technique
-                    </div>
-                </div>
-                <div class="session-part">
-                    <div class="part-number">3</div>
-                    <div class="part-title">Transformational Prompts</div>
-                    <div class="part-goal">Bridging Knowledge to Identity</div>
-                    <div class="part-principles">
-                        <strong>Principles:</strong> Persona-based reflection, Socratic questioning, applicational synthesis
-                    </div>
-                </div>
-                <div class="session-part">
-                    <div class="part-number">4</div>
-                    <div class="part-title">Metacognitive Synthesis</div>
-                    <div class="part-goal">Creating Your Own Framework</div>
-                    <div class="part-principles">
-                        <strong>Principles:</strong> Framework generation, principle summarization
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="flow-diagram" class="card fade-in">
-            <h2>Learning Process Flow</h2>
-            <div class="flow-diagram">
-                <div class="flow-line"></div>
-                <div class="flow-step">
-                    <div class="flow-step-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="flow-step-title">Start</div>
-                    <div class="flow-step-desc">Begin with foundational context</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-icon"><i class="fas fa-microscope"></i></div>
-                    <div class="flow-step-title">Analyze</div>
-                    <div class="flow-step-desc">Deep textual examination</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="flow-step-title">Transform</div>
-                    <div class="flow-step-desc">Apply to personal identity</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="flow-step-title">Master</div>
-                    <div class="flow-step-desc">Create your own framework</div>
-                </div>
-            </div>
         </section>
     </main>
 
+    <div id="prayerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePrayerModal()">&times;</span>
+            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">A Prayer of Reflection</h2>
+            <p class="prayer-text">
+                Dear Heavenly Father,<br><br>
+                Thank you for the incredible love demonstrated in John 3:16. Thank you for loving the world so much that you gave your only begotten Son. Help me to truly understand the depth of this love and to place my complete trust in Jesus.<br><br>
+                May I not just intellectually agree with this truth, but fully embrace it in my heart. Thank you for the promise of everlasting life through belief in your Son. May this truth transform how I live each day.<br><br>
+                In Jesus' name,<br>
+                Amen
+            </p>
+        </div>
+    </div>
+
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2023 Prompt Master. Unlocking AI Potential Through Advanced Prompt Engineering.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-            </div>
+        <div class="container">
+            <p>&copy; 2023 John 3:16 Study Guide. For God so loved the world...</p>
         </div>
     </footer>
 
     <script>
-        // Copy prompt functionality
-        function copyPrompt() {
-            const promptText = document.querySelector('.prompt-content').textContent;
-            navigator.clipboard.writeText(promptText).then(() => {
-                const btn = document.querySelector('.copy-btn');
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                }, 2000);
-            });
+        function openPrayerModal() {
+            document.getElementById('prayerModal').style.display = 'flex';
         }
 
-        // Smooth scrolling for navigation links
+        function closePrayerModal() {
+            document.getElementById('prayerModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('prayerModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -612,22 +560,27 @@ Begin with Part 1 now.</div>
             });
         });
 
-        // Add fade-in animation on scroll
+        // Add animation to elements when they come into view
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
         });
     </script>
 </body>
