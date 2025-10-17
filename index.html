@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John 3:16 Study Guide - The Gospel in a Nutshell</title>
+    <title>AI-Powered Bible Study: John 3:16 KJV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #0f1419;
-            --bg-secondary: #1a1f2e;
-            --bg-card: #192030;
-            --text-primary: #e1e8ed;
-            --text-secondary: #8899a6;
-            --accent-gold: #d4af37;
-            --accent-blue: #4a9eff;
-            --accent-red: #e74c3c;
-            --gradient: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+            --primary-color: #6a4c93;
+            --secondary-color: #9d4edd;
+            --accent-color: #c77dff;
+            --light-accent: #e0aaff;
+            --dark-bg: #10002b;
+            --darker-bg: #240046;
+            --card-bg: #3c096c;
+            --text-primary: #e0aaff;
+            --text-secondary: #c77dff;
+            --text-muted: #9d4edd;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         * {
@@ -26,531 +29,863 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg-primary);
+            background-color: var(--dark-bg);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Header Styles */
+        header {
+            background: var(--darker-bg);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
-        header {
-            background: var(--gradient);
-            padding: 2rem 0;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0;
             text-align: center;
+            background: var(--darker-bg);
             position: relative;
             overflow: hidden;
         }
 
-        header::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://picsum.photos/seed/bible/1200/300.jpg') center/cover;
-            opacity: 0.1;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/seed/bible-study/1200/600.jpg') center/cover;
+            opacity: 0.2;
             z-index: -1;
         }
 
-        h1 {
-            font-size: 2.5rem;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
-            color: var(--accent-gold);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .verse-display {
-            background: var(--bg-card);
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-secondary);
+        }
+
+        .verse-highlight {
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: 10px;
-            margin: 2rem auto;
             max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border-left: 4px solid var(--accent-gold);
-            position: relative;
-        }
-
-        .verse-display::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--accent-gold);
-            opacity: 0.3;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--accent-color);
         }
 
         .verse-text {
             font-size: 1.5rem;
             font-style: italic;
-            text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .verse-reference {
-            text-align: right;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 1rem;
         }
 
-        .infographic {
-            background: var(--bg-secondary);
-            padding: 3rem 0;
-            margin: 2rem 0;
-            border-radius: 15px;
+        /* Main Content */
+        main {
+            padding: 4rem 0;
         }
 
-        .infographic-title {
-            text-align: center;
-            font-size: 2rem;
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--accent-gold);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
         }
 
-        .verse-breakdown {
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light-accent);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .verse-part {
-            background: var(--bg-card);
+        .card-content {
+            color: var(--text-secondary);
+        }
+
+        /* Infographic Styles */
+        .infographic-container {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .infographic {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+        }
+
+        .step-infographic {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--light-accent);
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: var(--gradient-1);
+            z-index: 1;
+        }
+
+        /* Word Study Infographic */
+        .word-study-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .word-card {
+            background: var(--darker-bg);
             border-radius: 10px;
             padding: 1.5rem;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .word-english {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--light-accent);
+        }
+
+        .word-greek {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .word-meaning {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: var(--darker-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .tool-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--light-accent);
+        }
+
+        .tool-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--darker-bg);
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        .verse-part::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-gold);
+        .comparison-table th {
+            background: var(--gradient-1);
+            color: white;
+            padding: 1rem;
+            text-align: left;
         }
 
-        .verse-part:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .verse-part h3 {
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .comparison-table tr:last-child td {
+            border-bottom: none;
         }
 
-        .verse-part p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .verse-part i {
-            font-size: 2rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .context-section {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .context-section h2 {
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 5rem;
         }
 
-        .context-content {
+        .footer-content {
             display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 2rem;
-            align-items: center;
+            margin-bottom: 2rem;
         }
 
-        .context-image {
+        .footer-section {
             flex: 1;
             min-width: 200px;
         }
 
-        .context-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .context-text {
-            flex: 2;
-        }
-
-        .context-text p {
+        .footer-section h3 {
             margin-bottom: 1rem;
-            color: var(--text-secondary);
+            color: var(--light-accent);
         }
 
-        .context-text ul {
+        .footer-section ul {
             list-style: none;
-            padding-left: 0;
         }
 
-        .context-text li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
-
-        .context-text li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-        }
-
-        .cross-references {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-
-        .cross-references h2 {
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .reference-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .reference-card {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-
-        .reference-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .reference-card h3 {
-            color: var(--accent-blue);
+        .footer-section ul li {
             margin-bottom: 0.5rem;
         }
 
-        .reference-card p {
+        .footer-section a {
             color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .reference-card .explanation {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        .reflection-section {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .reflection-section h2 {
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .reflection-questions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .question-card {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            text-align: left;
-        }
-
-        .question-card h3 {
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .question-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .prayer-button {
-            background: var(--accent-gold);
-            color: var(--bg-primary);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .prayer-button:hover {
-            background: #b8941f;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
+            text-decoration: none;
             transition: color 0.3s;
         }
 
-        .close-modal:hover {
-            color: var(--text-primary);
+        .footer-section a:hover {
+            color: var(--light-accent);
         }
 
-        .prayer-text {
-            font-style: italic;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-top: 1rem;
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        footer {
-            background: var(--bg-secondary);
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-secondary);
-            margin-top: 3rem;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
                 font-size: 2rem;
             }
-            
-            .verse-text {
-                font-size: 1.2rem;
-            }
-            
-            .context-content {
+
+            .step-infographic {
                 flex-direction: column;
+                gap: 2rem;
             }
-            
-            .reference-grid {
+
+            .step-connector {
+                display: none;
+            }
+
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
+
+            .word-study-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Interactive Elements */
+        .accordion {
+            margin: 2rem 0;
+        }
+
+        .accordion-item {
+            background: var(--darker-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .accordion-header h3 {
+            color: var(--light-accent);
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 1000px;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--text-muted);
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.5rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1><i class="fas fa-book-open"></i> John 3:16 Study Guide</h1>
-            <p class="subtitle">The Gospel in a Nutshell</p>
-        </div>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-book-bible"></i>
+                AI Bible Study
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#guide">Study Guide</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container">
-        <section class="verse-display">
-            <p class="verse-text">"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</p>
-            <p class="verse-reference">John 3:16, KJV</p>
-        </section>
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Unlock Deeper Understanding of John 3:16 KJV</h1>
+            <p>Harness the power of artificial intelligence to explore this beloved verse with fresh insights through in-depth linguistic analysis, historical context, and cross-referencing capabilities.</p>
+            
+            <div class="verse-highlight">
+                <div class="verse-text">"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</div>
+                <div class="verse-reference">John 3:16 (KJV)</div>
+            </div>
+        </div>
+    </section>
 
-        <section class="infographic">
-            <h2 class="infographic-title">Breaking Down the Verse</h2>
-            <div class="verse-breakdown">
-                <div class="verse-part">
-                    <i class="fas fa-heart"></i>
-                    <h3>"For God so loved the world..."</h3>
-                    <p>God's love is intense, active, and sacrificial. It extends to all of humanity, regardless of status or background.</p>
+    <main class="container">
+        <section class="section" id="tools">
+            <h2 class="section-title">Choosing Your AI Bible Study Assistant</h2>
+            
+            <div class="card fade-in">
+                <div class="card-title">
+                    <i class="fas fa-robot"></i>
+                    What to Look For
                 </div>
-                <div class="verse-part">
-                    <i class="fas fa-gift"></i>
-                    <h3>"...that he gave his only begotten Son..."</h3>
-                    <p>The ultimate demonstration of God's love - giving His unique Son, Jesus, who shares a special eternal relationship with the Father.</p>
+                <div class="card-content">
+                    <p>Before delving into the scripture, select an AI tool that best suits your study needs. Look for tools that provide:</p>
+                    <ul style="margin-top: 1rem; margin-left: 2rem;">
+                        <li><strong>Multiple Bible Versions:</strong> Essential for comparing the KJV phrasing with other translations.</li>
+                        <li><strong>Original Language Analysis:</strong> The ability to explore the Greek and Hebrew words behind the English text.</li>
+                        <li><strong>Contextual Summaries:</strong> AI can quickly provide the historical and literary context of a passage.</li>
+                        <li><strong>Cross-Referencing:</strong> Discover related verses and themes throughout the Bible.</li>
+                    </ul>
                 </div>
-                <div class="verse-part">
-                    <i class="fas fa-users"></i>
-                    <h3>"...that whosoever believeth in him..."</h3>
-                    <p>The invitation is universal - open to everyone. Belief means deep trust and personal commitment to Jesus, not just intellectual agreement.</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h3>Logos Bible Software</h3>
+                        <p>Advanced biblical analysis with extensive library resources and AI-powered research tools.</p>
+                    </div>
                 </div>
-                <div class="verse-part">
-                    <i class="fas fa-infinity"></i>
-                    <h3>"...should not perish, but have everlasting life."</h3>
-                    <p>The choice is between eternal separation from God or a life in right relationship with Him - beginning now and continuing forever.</p>
+                
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h3>BibleGPT</h3>
+                        <p>AI-powered Bible study assistant with conversational interface for exploring scripture.</p>
+                    </div>
+                </div>
+                
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h3>FaithGPT</h3>
+                        <p>Specialized AI for theological exploration with deep understanding of biblical concepts.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="context-section">
-            <h2><i class="fas fa-history"></i> Understanding the Context</h2>
-            <div class="context-content">
-                <div class="context-image">
-                    <img src="https://picsum.photos/seed/nicodemus/400/300.jpg" alt="Nicodemus meeting Jesus">
+        <section class="section" id="guide">
+            <h2 class="section-title">Step-by-Step Guide to Analyzing John 3:16 with AI</h2>
+            
+            <div class="infographic-container">
+                <div class="infographic">
+                    <div class="step-infographic">
+                        <div class="step-connector"></div>
+                        <div class="step fade-in">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Verse & Context</div>
+                            <div class="step-description">Analyze the verse in its immediate context and historical setting</div>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Key Word Study</div>
+                            <div class="step-description">Explore the meaning of key words in the original Greek</div>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Cross-Reference</div>
+                            <div class="step-description">Find related verses and themes throughout the Bible</div>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">4</div>
+                            <div class="step-title">Compare Translations</div>
+                            <div class="step-description">Compare KJV with other translations to understand nuances</div>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">5</div>
+                            <div class="step-title">Apply & Reflect</div>
+                            <div class="step-description">Summarize key truths and apply them to your life</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="context-text">
-                    <p>John 3:16 is part of a conversation between Jesus and Nicodemus, a prominent Jewish religious leader who came to Jesus by night.</p>
-                    <ul>
-                        <li>Nicodemus was a "ruler of the Jews" - a member of the Sanhedrin</li>
-                        <li>His nighttime visit suggests both genuine curiosity and fear of his peers</li>
-                        <li>Jesus was explaining the necessity of being "born again" to see God's kingdom</li>
-                        <li>John 3:16 explains how this spiritual rebirth is possible through God's love and gift</li>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Step 1: Verse and Contextual Analysis</h3>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Start by asking the AI to provide a comprehensive analysis of John 3:16 and its immediate context. A good prompt would be:</p>
+                        <div class="card" style="margin-top: 1rem; background: var(--darker-bg);">
+                            <p style="font-style: italic;">"Analyze John 3:16 KJV in its immediate context of John 3. What is the historical and literary setting of this verse?"</p>
+                        </div>
+                        <p style="margin-top: 1rem;">The AI will explain that Jesus is speaking to Nicodemus, a Pharisee. This context is crucial for understanding the profound theological statements being made.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Step 2: Key Word Deep Dive</h3>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Use the AI's linguistic capabilities to explore the meaning of key words in the original Greek:</p>
+                        
+                        <div class="word-study-container">
+                            <div class="word-card">
+                                <div class="word-english">"Loved"</div>
+                                <div class="word-greek">agapaó</div>
+                                <div class="word-meaning">Selfless, unconditional love</div>
+                            </div>
+                            <div class="word-card">
+                                <div class="word-english">"World"</div>
+                                <div class="word-greek">kosmos</div>
+                                <div class="word-meaning">Humanity, physical planet, or system of rebellion</div>
+                            </div>
+                            <div class="word-card">
+                                <div class="word-english">"Only begotten"</div>
+                                <div class="word-greek">monogenés</div>
+                                <div class="word-meaning">Unique relationship between Father and Son</div>
+                            </div>
+                            <div class="word-card">
+                                <div class="word-english">"Believeth"</div>
+                                <div class="word-greek">pisteuó</div>
+                                <div class="word-meaning">Trust and reliance, not just intellectual assent</div>
+                            </div>
+                            <div class="word-card">
+                                <div class="word-english">"Everlasting life"</div>
+                                <div class="word-greek">zóé aiónios</div>
+                                <div class="word-meaning">Quality of life in relationship with God</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="margin-top: 1rem; background: var(--darker-bg);">
+                            <p style="font-style: italic;">"Provide a word study of 'loved,' 'world,' 'only begotten,' 'believeth,' and 'everlasting life' in John 3:16 KJV, referencing the original Greek."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Step 3: Cross-Referencing and Thematic Connections</h3>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Ask the AI to find other verses in the Bible that are thematically related to John 3:16:</p>
+                        <div class="card" style="margin-top: 1rem; background: var(--darker-bg);">
+                            <p style="font-style: italic;">"Find cross-references for John 3:16 that relate to the themes of God's love, the sacrifice of Jesus, and the nature of belief."</p>
+                        </div>
+                        <p style="margin-top: 1rem;">The AI might point you to verses like <span class="tooltip">Romans 5:8<span class="tooltiptext">"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."</span></span> and <span class="tooltip">1 John 4:9-10<span class="tooltiptext">Further elaboration on the sacrificial nature of God's love</span></span>, which further elaborate on the sacrificial nature of God's love.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Step 4: Comparing Translations</h3>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>To appreciate the unique wording of the KJV, ask the AI to compare John 3:16 with other translations:</p>
+                        <div class="card" style="margin-top: 1rem; background: var(--darker-bg);">
+                            <p style="font-style: italic;">"Compare John 3:16 in the KJV, NIV, and ESV. What are the key differences in translation and what are the potential implications of these differences?"</p>
+                        </div>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Translation</th>
+                                    <th>Key Phrase</th>
+                                    <th>Nuance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>KJV</td>
+                                    <td>"only begotten"</td>
+                                    <td>Emphasizes unique relationship and origin</td>
+                                </tr>
+                                <tr>
+                                    <td>NIV</td>
+                                    <td>"one and only"</td>
+                                    <td>Focuses on uniqueness and singularity</td>
+                                </tr>
+                                <tr>
+                                    <td>ESV</td>
+                                    <td>"only Son"</td>
+                                    <td>Simplifies while maintaining uniqueness</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Step 5: Summarization and Personal Application</h3>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>After your in-depth analysis, ask the AI to summarize the key theological truths of John 3:16:</p>
+                        <div class="card" style="margin-top: 1rem; background: var(--darker-bg);">
+                            <p style="font-style: italic;">"Summarize the main theological points of John 3:16 KJV based on our study. How can I apply these truths to my life?"</p>
+                        </div>
+                        <p style="margin-top: 1rem;">By leveraging the latest in AI technology, you can move beyond a surface-level reading of John 3:16 and gain a richer, more profound understanding of one of the most powerful verses in the Bible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="resources">
+            <h2 class="section-title">Additional Resources</h2>
+            
+            <div class="card fade-in">
+                <div class="card-title">
+                    <i class="fas fa-book"></i>
+                    Recommended Reading
+                </div>
+                <div class="card-content">
+                    <ul style="margin-left: 2rem;">
+                        <li>"The Gospel of John" by F.F. Bruce</li>
+                        <li>"John" (NIV Application Commentary) by Gary M. Burge</li>
+                        <li>"The Gospel According to John" by D.A. Carson</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="card-title">
+                    <i class="fas fa-video"></i>
+                    Video Resources
+                </div>
+                <div class="card-content">
+                    <ul style="margin-left: 2rem;">
+                        <li>"The Meaning of John 3:16" - BibleProject</li>
+                        <li>"Nicodemus and the New Birth" - The Bible Project</li>
+                        <li>"The Love of God in John 3:16" - Desiring God</li>
                     </ul>
                 </div>
             </div>
         </section>
-
-        <section class="cross-references">
-            <h2><i class="fas fa-link"></i> Cross-References</h2>
-            <div class="reference-grid">
-                <div class="reference-card">
-                    <h3>Romans 5:8</h3>
-                    <p>"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."</p>
-                    <p class="explanation">Reinforces the sacrificial nature of God's love for the undeserving.</p>
-                </div>
-                <div class="reference-card">
-                    <h3>John 1:12</h3>
-                    <p>"But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:"</p>
-                    <p class="explanation">Explains what it means to be a child of God through belief.</p>
-                </div>
-                <div class="reference-card">
-                    <h3>1 John 4:9-10</h3>
-                    <p>"In this was manifested the love of God toward us, because that God sent his only begotten Son into the world, that we might live through him."</p>
-                    <p class="explanation">Further elaborates on the demonstration of God's love.</p>
-                </div>
-                <div class="reference-card">
-                    <h3>John 3:17-18</h3>
-                    <p>"For God sent not his Son into the world to condemn the world; but that the world through him might be saved."</p>
-                    <p class="explanation">Clarifies the purpose of Jesus' coming immediately following John 3:16.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="reflection-section">
-            <h2><i class="fas fa-pray"></i> Reflect and Pray</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Consider these questions as you reflect on the meaning of John 3:16 in your life:</p>
-            <div class="reflection-questions">
-                <div class="question-card">
-                    <h3>God's Love</h3>
-                    <p>What does it mean to you that God loves "the world" in this way?</p>
-                </div>
-                <div class="question-card">
-                    <h3>The Gift</h3>
-                    <p>How does the gift of Jesus Christ demonstrate the depth of God's love?</p>
-                </div>
-                <div class="question-card">
-                    <h3>Belief</h3>
-                    <p>What does it truly mean for you to "believe" in Jesus?</p>
-                </div>
-                <div class="question-card">
-                    <h3>Eternal Life</h3>
-                    <p>What is the difference between "perishing" and having "everlasting life"?</p>
-                </div>
-            </div>
-            <button class="prayer-button" onclick="openPrayerModal()">
-                <i class="fas fa-hands-praying"></i> Begin Your Prayer
-            </button>
-        </section>
     </main>
-
-    <div id="prayerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePrayerModal()">&times;</span>
-            <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">A Prayer of Reflection</h2>
-            <p class="prayer-text">
-                Dear Heavenly Father,<br><br>
-                Thank you for the incredible love demonstrated in John 3:16. Thank you for loving the world so much that you gave your only begotten Son. Help me to truly understand the depth of this love and to place my complete trust in Jesus.<br><br>
-                May I not just intellectually agree with this truth, but fully embrace it in my heart. Thank you for the promise of everlasting life through belief in your Son. May this truth transform how I live each day.<br><br>
-                In Jesus' name,<br>
-                Amen
-            </p>
-        </div>
-    </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 John 3:16 Study Guide. For God so loved the world...</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>AI Bible Study helps you explore scripture with the power of artificial intelligence, providing deeper insights into biblical texts.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#guide">Study Guide</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AI Bible Study. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        function openPrayerModal() {
-            document.getElementById('prayerModal').style.display = 'flex';
-        }
-
-        function closePrayerModal() {
-            document.getElementById('prayerModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('prayerModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Add smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -560,27 +895,54 @@
             });
         });
 
-        // Add animation to elements when they come into view
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all accordion items
+                document.querySelectorAll('.accordion-item').forEach(accordionItem => {
+                    accordionItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        document.querySelectorAll('.card, .tool-card, .word-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.word-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Create a modal or expanded view with more information
+                const english = card.querySelector('.word-english').textContent;
+                const greek = card.querySelector('.word-greek').textContent;
+                const meaning = card.querySelector('.word-meaning').textContent;
+                
+                // This is a simple example - in a real implementation, you might create a modal
+                console.log(`Word: ${english}, Greek: ${greek}, Meaning: ${meaning}`);
+            });
         });
     </script>
 </body>
